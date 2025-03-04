@@ -8,7 +8,7 @@
 | 0x2  | MUL       | Multiplication       |
 | ...  | ...       | ...                  |
 
-## Command Formats
+## Block Signals
 ```verilog
 // ALU port
 ALU #(
