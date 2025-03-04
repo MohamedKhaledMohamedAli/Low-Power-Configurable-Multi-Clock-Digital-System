@@ -10,7 +10,7 @@ A UART-controlled system with ALU operations and register file management.
 - Clock gating and synchronization
 
 ## Block Diagram
-![System Diagram](docs/image/block_diagram.png) *← Add actual diagram file*
+![System Diagram](docs/image/block_diagram.png)
 
 ## Clock Domains
 1. **REF_CLK (50MHz) Domain**
