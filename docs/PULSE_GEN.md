@@ -5,7 +5,7 @@ Generates a pulse signal when a level signal is detected.
 
 ## Block Diagram
 
-![PULSE_GEN](docs/PULSE_GEN.png)
+![PULSE_GEN](image/PULSE_GEN.png)
 
 ## Interface and Signal Description
 
