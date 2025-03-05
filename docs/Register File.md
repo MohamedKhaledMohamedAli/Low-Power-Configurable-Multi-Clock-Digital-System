@@ -1,4 +1,6 @@
-# Register Map
+# Register File
+
+## Register Map
 
 | Address | Name    | Description                     | Default |
 |---------|---------|---------------------------------|---------|
