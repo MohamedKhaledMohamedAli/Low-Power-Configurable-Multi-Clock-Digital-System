@@ -23,3 +23,5 @@ A UART-controlled system with ALU operations and register file management.
    - UART TX/RX
    - Clock Divider
    - Pulse Generator
+
+[Details of Each Block](docs/)
