@@ -1,5 +1,25 @@
 # ALU Operations
 
+## Description
+Performs arithmetic and logic operations on operands from the RegFile.
+
+## Block Diagram
+
+![ALU](image/ALU.png)
+
+## Interface and Signal Description
+
+| Port | Direction | Width | Description |
+|---|---|---|---|
+| CLK | IN | 1 | Clock Signal (Gated Clock) |
+| RST | IN | 1 | Active Low Reset |
+| A | IN | Parameterized <br> (default: 8 bits) | Operand A from RegFile (REG0) |
+| B | IN | Parameterized <br> (default: 8 bits) | Operand B from RegFile (REG1) |
+| ALU_FUN | IN | Parameterized <br> (default: 4 bits) | ALU Function Code |
+| Enable | IN | 1 | ALU Enable |
+| ALU_OUT | OUT | Parameterized <br> (default: 8 bits) | ALU Result |
+| OUT_VALID | OUT | 1 | Result Valid Flag |
+
 ## Supported Functions
 | Code | Operation | Description          |
 |------|-----------|----------------------|
@@ -7,18 +27,3 @@
 | 0x1  | SUB       | Subtraction          |
 | 0x2  | MUL       | Multiplication       |
 | ...  | ...       | ...                  |
-
-## Block Signals
-```verilog
-// ALU port
-ALU #(
-        parameter OP_WIDTH = 8,
-        parameter FUN_WIDTH = 4,
-        parameter OUT_WIDTH = OP_WIDTH + OP_WIDTH
-    ) (
-        input   wire    [OP_WIDTH-1:0]      A, B,
-        input   wire                        CLK, RST, Enable,
-        input   wire    [FUN_WIDTH-1:0]     ALU_FUN,
-        output  reg                         OUT_VALID,
-        output  reg     [OUT_WIDTH-1:0]     ALU_OUT
-    );
