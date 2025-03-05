@@ -32,13 +32,13 @@ A UART-controlled system with ALU operations and register file management.
 
 ## Supported Operations
 
-### ALU Operations
+1. **ALU Operations**
 - Addition, Subtraction, Multiplication, Division
 - AND, OR, NAND, NOR, XOR, XNOR
 - Comparisons: (A = B), (A > B)
 - Shifts: A >> 1, A << 1
 
-### Register File Operations
+2. **Register File Operations**
 - Write and Read
 
 ## Command Format
@@ -49,5 +49,15 @@ A UART-controlled system with ALU operations and register file management.
 | RF Read | 2 | Addr |
 | ALU Op (with operands) | 4 | Operands + Function |
 | ALU Op (no operands) | 2 | Function Only |
+
+## Operation Sequence (Testbench Flow)
+
+1. Initial configuration via Register File write (Addresses 0x2, 0x3).
+2. Master sends commands (RegFile/ALU Operations).
+3. System receives commands via **UART_RX**, processed by **SYS_CTRL**.
+4. Results sent back via **UART_TX**.
+5. Address Ranges:
+   - Config & ALU Operands: 0x0 - 0x3
+   - Regular Read/Write: 0x4 - 0x15
 
 [Details of Each Block](docs/)
