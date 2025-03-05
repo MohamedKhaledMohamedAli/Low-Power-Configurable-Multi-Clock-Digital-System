@@ -2,6 +2,12 @@
 
 A UART-controlled system with ALU operations and register file management.
 
+## System Overview
+
+- Receives commands from a master via **UART_RX**.
+- Executes commands using ALU and Register File.
+- Sends results back via **UART_TX**.
+  
 ## Features
 - Dual clock domain architecture
 - 14 ALU operations
@@ -23,5 +29,25 @@ A UART-controlled system with ALU operations and register file management.
    - UART TX/RX
    - Clock Divider
    - Pulse Generator
+
+## Supported Operations
+
+### ALU Operations
+- Addition, Subtraction, Multiplication, Division
+- AND, OR, NAND, NOR, XOR, XNOR
+- Comparisons: (A = B), (A > B)
+- Shifts: A >> 1, A << 1
+
+### Register File Operations
+- Write and Read
+
+## Command Format
+
+| Command | Frames | Description |
+|---|---|---|
+| RF Write | 3 | Addr + Data |
+| RF Read | 2 | Addr |
+| ALU Op (with operands) | 4 | Operands + Function |
+| ALU Op (no operands) | 2 | Function Only |
 
 [Details of Each Block](docs/)
